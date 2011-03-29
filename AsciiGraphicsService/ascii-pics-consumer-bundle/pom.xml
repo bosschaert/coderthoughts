@@ -7,7 +7,7 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>ascii-pics-provider-bundle</artifactId>
+  <artifactId>ascii-pics-consumer-bundle</artifactId>
   <packaging>eclipse-plugin</packaging>
 </project>
 
