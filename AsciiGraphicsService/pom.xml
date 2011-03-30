@@ -40,6 +40,7 @@
   </repositories>
 
   <modules>
+    <module>ascii-pics-api-bundle</module>
     <module>ascii-pics-provider-bundle</module>
     <module>ascii-pics-consumer-bundle</module>
   </modules>
