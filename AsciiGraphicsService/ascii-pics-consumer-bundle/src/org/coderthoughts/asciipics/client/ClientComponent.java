@@ -1,22 +1,25 @@
 package org.coderthoughts.asciipics.client;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.coderthoughts.asciipics.api.PictureService;
 
 public class ClientComponent {
+    private ClientWindow clientWindow;
     private PictureService pictureService;
     private volatile boolean keepRunning;
 
     public void activate() {
-        System.out.println("************************ activated");
+        clientWindow = new ClientWindow();
 
         keepRunning = true;
         new Thread(new DilbertPrinter()).start();
     }
 
     public void deactivate() {
-        System.out.println("####################### deactivated");
+        clientWindow.setVisible(false);
+        clientWindow = null;
 
         keepRunning = false;
     }
@@ -33,11 +36,15 @@ public class ClientComponent {
         @Override
         public void run() {
             while (keepRunning) {
-                System.out.println();
-                System.out.println(pictureService.getPic("Dilbert"));
+                StringBuilder sb = new StringBuilder(new Date().toString());
+                sb.append('\n');
+                sb.append(pictureService.getPic("Dilbert"));
+                clientWindow.setText(sb.toString());
 
                 try {
-                    TimeUnit.SECONDS.sleep(5);
+                    TimeUnit.SECONDS.sleep(4);
+                    clientWindow.setText("");
+                    TimeUnit.MILLISECONDS.sleep(300);
                 } catch (InterruptedException e) {
                     // oh well
                 }

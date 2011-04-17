@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>0.10.0</tycho-version>
+    <tycho-version>0.11.0</tycho-version>
   </properties>
 
   <build>
@@ -43,6 +43,7 @@
     <module>ascii-pics-api-bundle</module>
     <module>ascii-pics-provider-bundle</module>
     <module>ascii-pics-consumer-bundle</module>
+    <module>ascii-pics-ejb-aliaser-bundle</module>
   </modules>
 </project>
 
