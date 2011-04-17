@@ -16,17 +16,18 @@ public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext context) throws Exception {
         // TODO this should happen in a deployment processor
-        System.out.println("Aliaser started: " + context);
-        System.out.println("*** Initial Context" + getInitialContext(context));
+        // System.out.println("Aliaser started: " + context);
+        // System.out.println("*** Initial Context" + getInitialContext(context));
         InitialContext iniCtx = getInitialContext(context);
         // final Object ejbObj = iniCtx
         // .lookup("java:global/AsciiPicsEJB/AsciiPicEJB!org.coderthoughts.asciipics.ejb.PictureServiceRemote");
         final Object ejbObj = iniCtx
                 .lookup("java:global/AsciiPicsEJB/AsciiPicEJB!org.coderthoughts.asciipics.ejb.PictureServiceLocal");
-        // Thread.currentThread().setContextClassLoader(ejbObj.getClass().getClassLoader());
-        // System.out.println("**** " + ejbObj);
 
-        System.out.println("~~~~ " + ejbObj.getClass().getDeclaredMethod("getPic", String.class).invoke(ejbObj, "xyz"));
+        // System.out.println("**** " + ejbObj);
+        // ClassLoader ctxLoader = Thread.currentThread().getContextClassLoader();
+        // System.out.println("~~~~ " + ejbObj.getClass().getDeclaredMethod("getPic", String.class).invoke(ejbObj, "xyz"));
+        ejbObj.getClass().getDeclaredMethod("getPic", String.class).invoke(ejbObj, "xyz");
 
         final Method ejbMethod = ejbObj.getClass().getDeclaredMethod("getPic", String.class);
 
@@ -42,6 +43,7 @@ public class Activator implements BundleActivator {
             }
         };
         reg = context.registerService(PictureService.class.getName(), service, null);
+        System.out.println("Registered Aliaser");
     }
 
     private InitialContext getInitialContext(BundleContext context) {

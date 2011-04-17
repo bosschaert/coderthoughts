@@ -15,7 +15,7 @@
   	  <business-remote>org.coderthoughts.asciipics.ejb.PictureServiceRemote</business-remote>
   	  <ejb-class>org.coderthoughts.asciipics.ejb.AsciiPicEJB</ejb-class>
   	  <session-type>Stateless</session-type>
-      <transaction-type>Container</transaction-type>      
+      <transaction-type>Bean</transaction-type>      
   	</session>
   </enterprise-beans>
 </ejb-jar>
