@@ -42,6 +42,7 @@
   <modules>
     <module>ascii-pics-api-bundle</module>
     <module>ascii-pics-provider-bundle</module>
+    <module>ascii-pics-provider-ejb</module>
     <module>ascii-pics-consumer-bundle</module>
     <module>ascii-pics-ejb-aliaser-bundle</module>
   </modules>

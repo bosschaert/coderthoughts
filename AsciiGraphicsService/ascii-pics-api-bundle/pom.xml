@@ -9,6 +9,8 @@
 
   <artifactId>ascii-pics-api-bundle</artifactId>
   <packaging>eclipse-plugin</packaging>
+  <!-- The API is the contract across to the EJB, so let's use a 'real' version here -->
+  <version>1.0.0</version>
 </project>
 
 
