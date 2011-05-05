@@ -6,19 +6,20 @@ import java.util.concurrent.TimeUnit;
 import org.coderthoughts.asciipics.api.PictureService;
 
 public class ClientComponent {
-    private ClientWindow clientWindow;
+    private ClientSwingWindow clientWindow;
     private PictureService pictureService;
     private volatile boolean keepRunning;
 
     public void activate() {
-        clientWindow = new ClientWindow();
+        clientWindow = new ClientSwingWindow();
+        clientWindow.createAndShow();
 
         keepRunning = true;
         new Thread(new DilbertPrinter()).start();
     }
 
     public void deactivate() {
-        clientWindow.setVisible(false);
+        clientWindow.hide();
         clientWindow = null;
 
         keepRunning = false;

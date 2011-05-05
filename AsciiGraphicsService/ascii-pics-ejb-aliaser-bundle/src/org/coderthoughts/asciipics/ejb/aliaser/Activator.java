@@ -28,10 +28,12 @@ public class Activator implements BundleActivator {
         // ClassLoader ctxLoader = Thread.currentThread().getContextClassLoader();
         // System.out.println("~~~~ " + ejbObj.getClass().getDeclaredMethod("getPic", String.class).invoke(ejbObj, "xyz"));
         ejbObj.getClass().getDeclaredMethod("getPic", String.class).invoke(ejbObj, "xyz");
+        
+        /* TODO should work with Beta4
         if (ejbObj instanceof PictureService) {
             PictureService ps = (PictureService) ejbObj;
             System.out.println("Cast to PictureService: " + ps);
-        }
+        } */
 
         final Method ejbMethod = ejbObj.getClass().getDeclaredMethod("getPic", String.class);
 

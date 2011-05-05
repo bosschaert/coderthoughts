@@ -14,23 +14,28 @@ public class ClientSwingWindow {
      * Create the GUI and show it. For thread safety, this method should be invoked from the event-dispatching thread.
      */
     public void createAndShow() {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                frame = new JFrame("OSGi Client Consumer");
-                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        try {
+            SwingUtilities.invokeAndWait(new Runnable() {
+                @Override
+                public void run() {
+                    frame = new JFrame("OSGi Client Consumer");
+                    frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
-                textArea = new JTextArea();
-                // Add the ubiquitous "Hello World" label.
-                // JLabel label = new JLabel("Hello World");
-                frame.getContentPane().add(textArea);
+                    textArea = new JTextArea();
+                    // Add the ubiquitous "Hello World" label.
+                    // JLabel label = new JLabel("Hello World");
+                    frame.getContentPane().add(textArea);
 
-                // Display the window.
-                frame.pack();
-                frame.setSize(400, 400);
-                frame.setVisible(true);
-            }
-        });
+                    // Display the window.
+                    frame.pack();
+                    frame.setSize(400, 400);
+                    frame.setVisible(true);
+                }
+            });
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     public void setText(final String text) {
