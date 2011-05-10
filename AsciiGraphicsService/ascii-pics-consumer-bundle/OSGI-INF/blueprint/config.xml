@@ -3,7 +3,8 @@
   <reference id="pictureService"
              interface="org.coderthoughts.asciipics.api.PictureService" />
 
-  <bean id="ascii-art-client" class="org.coderthoughts.asciipics.client.ClientComponent"
+  <bean id="ascii-art-client" 
+        class="org.coderthoughts.asciipics.client.ClientComponent"
         init-method="activate" destroy-method="deactivate">
     <property name="pictureService" ref="pictureService" />
   </bean>
