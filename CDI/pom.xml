@@ -10,6 +10,7 @@
     <module>osgi-cdi-demo-api-bundle</module>
     <module>osgi-cdi-demo-provider-bundle</module>
     <module>osgi-cdi-demo-webapp</module>
+    <module>osgi-cdi-demo-consumer-bundle</module>
   </modules>
 
   <build>

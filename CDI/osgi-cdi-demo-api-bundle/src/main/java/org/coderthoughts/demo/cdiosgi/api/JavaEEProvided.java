@@ -1,5 +1,5 @@
 package org.coderthoughts.demo.cdiosgi.api;
 
-public interface JavaEEProvidedBean {
+public interface JavaEEProvided {
     String reverse(String text);
 }

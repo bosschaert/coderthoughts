@@ -1,5 +1,6 @@
 package org.coderthoughts.demo.cdiosgi.api;
 
-public interface OSGiPropertyAccessBean {
+/** Provides OSGi Framework Properties. */
+public interface OSGiPropertyProvider {
     String getProperty(String name);
 }

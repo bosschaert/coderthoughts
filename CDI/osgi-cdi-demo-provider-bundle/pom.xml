@@ -9,9 +9,25 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>osgi-cdi-demo-api-provider</artifactId>
+  <artifactId>osgi-cdi-demo-provider-bundle</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.coderthoughts</groupId>
+      <artifactId>osgi-cdi-demo-api-bundle</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>   
+   
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>4.2.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -21,9 +37,7 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Import-Package>org.coderthoughts.demo.cdiosgi.api</Import-Package>
-            <Export-Package/>
-            <Private-Package>*</Private-Package>
+            <Bundle-Activator>org.coderthoughts.demo.cdiosgi.provider.impl.Activator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>
