@@ -1,7 +1,7 @@
 package org.coderthoughts.demo.cdiosgi.test.impl;
 
 import org.coderthoughts.demo.cdiosgi.api.OSGiPropertyProvider;
-import org.coderthoughts.demo.cdiosgi.api.ServletParamProvider;
+import org.coderthoughts.demo.cdiosgi.api.WarBean;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -16,12 +16,12 @@ public class Activator implements BundleActivator {
         System.out.println("*** osgi-cdi-demo-test-bundle started.");
 
         // This bundle mocks the JavaEE Service for testing
-        ServletParamProvider spp = new ServletParamProvider() {
-            public String getParam(String name) {
+        WarBean spp = new WarBean() {
+            public String getValue(String name) {
                 return "Mocked from OSGi Bundle";
             }
         };
-        reg = context.registerService(ServletParamProvider.class.getName(), spp, null);
+        reg = context.registerService(WarBean.class.getName(), spp, null);
 
         st = new ServiceTracker(context, OSGiPropertyProvider.class.getName(), null) {
             public Object addingService(ServiceReference reference) {
