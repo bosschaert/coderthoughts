@@ -44,7 +44,7 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Bundle-Activator>org.coderthoughts.demo.test.Activator</Bundle-Activator>
+            <Bundle-Activator>org.coderthoughts.demo.cdiosgi.test.impl.Activator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>

@@ -1,4 +1,4 @@
-package org.coderthoughts.demo.test;
+package org.coderthoughts.demo.cdiosgi.test.impl;
 
 import org.coderthoughts.demo.cdiosgi.api.OSGiPropertyProvider;
 import org.coderthoughts.demo.cdiosgi.api.ServletParamProvider;
@@ -13,6 +13,8 @@ public class Activator implements BundleActivator {
     private ServiceTracker st;
 
     public void start(BundleContext context) throws Exception {
+        System.out.println("*** osgi-cdi-demo-test-bundle started.");
+
         // This bundle mocks the JavaEE Service for testing
         ServletParamProvider spp = new ServletParamProvider() {
             public String getParam(String name) {

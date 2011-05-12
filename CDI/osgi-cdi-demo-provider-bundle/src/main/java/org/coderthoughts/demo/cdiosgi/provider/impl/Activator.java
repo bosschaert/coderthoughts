@@ -9,6 +9,8 @@ public class Activator implements BundleActivator {
     private ServiceRegistration reg;
 
     public void start(BundleContext context) throws Exception {
+        System.out.println("*** osgi-cdi-demo-provider-bundle started.");
+
         OSGiPropertyProvider pp = new OSGiPropertyProviderImpl(context);
         reg = context.registerService(OSGiPropertyProvider.class.getName(), pp, null);
     }
