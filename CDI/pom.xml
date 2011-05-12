@@ -9,11 +9,9 @@
   <modules>
     <module>osgi-cdi-demo-api-bundle</module>
     <module>osgi-cdi-demo-provider-bundle</module>
-    <!--
-    <module>osgi-cdi-demo-webapp</module>
-    -->
     <module>osgi-cdi-demo-consumer-bundle</module>
     <module>osgi-cdi-demo-test-bundle</module>
+    <module>osgi-cdi-demo-webapp</module>
   </modules>
 
   <build>

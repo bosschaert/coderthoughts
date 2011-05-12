@@ -12,7 +12,7 @@
 
   <servlet>
     <servlet-name>CDIServlet</servlet-name>
-    <servlet-class>org.coderthoughts.cdi.CDIServlet</servlet-class>
+    <servlet-class>org.coderthoughts.demo.cdiosgi.web.CDIServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
