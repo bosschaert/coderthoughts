@@ -16,35 +16,17 @@ public class CDIServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Inject
-    Hello hello;
-
-    @Inject
-    MyInterface mi;
-
-    @Inject
     OSGiPropertyProvider osgiPropertyProvider;
 
     @Inject
     WarBean warBean;
 
-    // @Produces
-    // public MyInterface createMyInterface() {
-    // return new MyInterface() {
-    // public String getValue() {
-    // return "euuuuhh";
-    // }
-    // };
-    // }
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
-        writer.print("hihaho " + hello.sayHelloWorld());
-        writer.print("<p/>aha " + mi.getValue());
-        writer.print("\nhey! " + osgiPropertyProvider.getProperty("org.osgi.framework.executionenvironment"));
-        writer.print("\nInit param: myservletparam: " + getInitParameter("myservletparam"));
-        writer.print("\nInit param: myservletparam: " + warBean.getValue());
+        writer.print("Coming From OSGi org.osgi.framework.executionenvironment property value: "
+                + osgiPropertyProvider.getProperty("org.osgi.framework.executionenvironment"));
+        writer.print("\nWarBean value: " + warBean.getValue());
 
         writer.flush();
         writer.close();

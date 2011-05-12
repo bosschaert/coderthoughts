@@ -10,8 +10,11 @@
     <module>osgi-cdi-demo-api-bundle</module>
     <module>osgi-cdi-demo-provider-bundle</module>
     <module>osgi-cdi-demo-consumer-bundle</module>
-    <module>osgi-cdi-demo-test-bundle</module>
     <module>osgi-cdi-demo-webapp</module>
+    <!--
+    This one is not part of the demo
+    <module>osgi-cdi-demo-test-bundle</module>
+    --> 
   </modules>
 
   <build>
