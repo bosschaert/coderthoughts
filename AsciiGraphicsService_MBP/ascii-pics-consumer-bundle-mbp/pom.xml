@@ -27,6 +27,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
             <Export-Package/>  
             <Private-Package>org.coderthoughts.asciipics.client</Private-Package>
             <Service-Component>OSGI-INF/*.xml</Service-Component>

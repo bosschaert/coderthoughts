@@ -21,6 +21,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
             <Export-Package>*;version=${project.version}</Export-Package>
           </instructions>
         </configuration>

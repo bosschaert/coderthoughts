@@ -33,6 +33,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
             <Bundle-Activator>org.coderthoughts.asciipics.ejb.aliaser.Activator</Bundle-Activator>
           </instructions>
         </configuration>

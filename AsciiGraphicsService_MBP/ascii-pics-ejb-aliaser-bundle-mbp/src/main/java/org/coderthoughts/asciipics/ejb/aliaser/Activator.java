@@ -9,7 +9,7 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
 public class Activator implements BundleActivator {
-    private static final String JNDI_NAME = "java:global/ascii-pics-provider-ejb-1.0-SNAPSHOT/AsciiPicEJB";
+    private static final String JNDI_NAME = "java:global/ascii-pics-provider-ejb-mbp-1.0-SNAPSHOT/AsciiPicEJB";
 
     private ServiceRegistration reg;
 

@@ -46,7 +46,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Dependencies>org.jboss.modules,deployment.ascii-pics-api-bundle:1.0.0</Dependencies>
+                            <Dependencies>org.jboss.modules,deployment.ascii-pics-api-bundle-mbp:1.0.0</Dependencies>
                         </manifestEntries>
                     </archive>
                 </configuration>
