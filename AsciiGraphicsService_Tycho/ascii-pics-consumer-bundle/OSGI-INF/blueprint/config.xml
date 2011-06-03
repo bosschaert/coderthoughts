@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+  <reference id="pictureService"
+             interface="org.coderthoughts.asciipics.api.PictureService" />
+
+  <bean id="ascii-art-client" 
+        class="org.coderthoughts.asciipics.client.ClientComponent"
+        init-method="activate" destroy-method="deactivate">
+    <property name="pictureService" ref="pictureService" />
+  </bean>
+</blueprint>
