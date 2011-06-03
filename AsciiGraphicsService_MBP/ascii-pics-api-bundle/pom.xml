@@ -3,14 +3,30 @@
 
   <parent>
     <groupId>org.coderthoughts</groupId>
-    <artifactId>ascii-pics-parent</artifactId>
+    <artifactId>ascii-pics-parent-mbp</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>ascii-pics-api-bundle</artifactId>
+  <artifactId>ascii-pics-api-bundle-mbp</artifactId>
   <packaging>bundle</packaging>
+
   <!-- The API is the contract across to the EJB, so let's use a 'real' version here -->
   <version>1.0.0</version>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Export-Package>*;version=${project.version}</Export-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
 
 

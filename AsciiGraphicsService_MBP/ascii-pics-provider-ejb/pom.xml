@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.coderthoughts</groupId>
-    <artifactId>ascii-pics-provider-ejb</artifactId>
+    <artifactId>ascii-pics-provider-ejb-mbp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>org.coderthoughts</groupId>
-            <artifactId>ascii-pics-api-bundle</artifactId>
+            <artifactId>ascii-pics-api-bundle-mbp</artifactId>
             <version>1.0.0</version>
             <scope>provided</scope>
         </dependency>

@@ -2,47 +2,26 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>org.coderthoughts</groupId>
-  <artifactId>ascii-pics-parent</artifactId>
+  <artifactId>ascii-pics-parent-mbp</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  
-  <properties>
-    <tycho-version>0.11.0</tycho-version>
-  </properties>
 
   <build>
-    <plugins>
-      <plugin>
-        <!-- enable tycho build extension -->
-        <groupId>org.sonatype.tycho</groupId>
-        <artifactId>tycho-maven-plugin</artifactId>
-        <version>${tycho-version}</version>
-        <extensions>true</extensions>
-      </plugin>
-      <plugin>
-        <groupId>org.sonatype.tycho</groupId>
-        <artifactId>target-platform-configuration</artifactId>
-        <version>${tycho-version}</version>
-        <configuration>
-          <resolver>p2</resolver>
-        </configuration>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>2.3.4</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
-
-  <repositories>
-    <!-- configure p2 repository to resolve against -->
-    <repository>
-      <id>helios</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/helios/</url>
-    </repository>
-  </repositories>
 
   <modules>
     <module>ascii-pics-api-bundle</module>
-    <!--
     <module>ascii-pics-provider-bundle</module>
+    <!--
     <module>ascii-pics-provider-ejb</module>
     <module>ascii-pics-consumer-bundle</module>
     <module>ascii-pics-ejb-aliaser-bundle</module>
