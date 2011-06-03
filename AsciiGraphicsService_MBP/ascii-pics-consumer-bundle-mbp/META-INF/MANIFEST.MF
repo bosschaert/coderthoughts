@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-SymbolicName: ascii-pics-consumer-bundle
-Bundle-Version: 1.0.0.qualifier
-Import-Package: org.coderthoughts.asciipics.api
-Service-Component: OSGI-INF/*.xml
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -8,7 +8,32 @@
   </parent>
 
   <artifactId>ascii-pics-consumer-bundle-mbp</artifactId>
-  <packaging>eclipse-plugin</packaging>
+  <packaging>bundle</packaging>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.coderthoughts</groupId>
+      <artifactId>ascii-pics-api-bundle-mbp</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Private-Package>org.coderthoughts.asciipics.client</Private-Package>
+            <Export-Package/>  
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>  
 </project>
 
 
