@@ -32,9 +32,7 @@
   <modules>
     <module>ascii-pics-api-bundle-mbp</module>
     <module>ascii-pics-provider-bundle-mbp</module>
-    <!--
     <module>ascii-pics-provider-ejb-mbp</module>
-    -->
     <module>ascii-pics-consumer-bundle-mbp</module>
     <module>ascii-pics-ejb-aliaser-bundle-mbp</module>
   </modules>
