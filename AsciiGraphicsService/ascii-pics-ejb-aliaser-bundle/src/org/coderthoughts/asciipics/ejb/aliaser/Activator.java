@@ -16,7 +16,7 @@ public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext context) throws Exception {
         InitialContext iniCtx = getInitialContext(context);
-        final Object ejbObj = iniCtx.lookup(JNDI_NAME);
+        Object ejbObj = iniCtx.lookup(JNDI_NAME);
 
         if (ejbObj instanceof PictureService == false) {
             throw new IllegalStateException("JNDI registration " + JNDI_NAME + " does not implement "
