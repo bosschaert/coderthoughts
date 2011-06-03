@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Export-Package: org.coderthoughts.asciipics.api;version="1.0.0"
+Built-By: davidb
+Build-Jdk: 1.6.0_25
+Bundle-Version: 1.0.0
+Tool: Bnd-1.15.0
+Bundle-Name: ascii-pics-api-bundle-mbp
+Bnd-LastModified: 1307107924443
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.coderthoughts.ascii-pics-api-bundle-mbp
+
