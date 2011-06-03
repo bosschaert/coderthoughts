@@ -11,8 +11,7 @@
   	  <ejb-ref>
   	  	<ejb-ref-name>ejb/AsciiPicEJB</ejb-ref-name>
   	  </ejb-ref>
-  	  <business-local>org.coderthoughts.asciipics.ejb.PictureServiceLocal</business-local>
-  	  <business-remote>org.coderthoughts.asciipics.ejb.PictureServiceRemote</business-remote>
+
   	  <ejb-class>org.coderthoughts.asciipics.ejb.AsciiPicEJB</ejb-class>
   	  <session-type>Stateless</session-type>
       <transaction-type>Bean</transaction-type>      

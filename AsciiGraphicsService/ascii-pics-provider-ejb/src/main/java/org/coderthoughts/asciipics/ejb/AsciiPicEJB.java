@@ -3,10 +3,9 @@ package org.coderthoughts.asciipics.ejb;
 import javax.ejb.Stateless;
 
 @Stateless
-public class AsciiPicEJB implements PictureServiceRemote, PictureServiceLocal {
+public class AsciiPicEJB implements PictureServiceLocal {
     private static final String LF = "\n";
 
-    @Override
 	public String getPic(String name) {
 		return
             "         .-'''-." + LF +

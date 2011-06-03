@@ -1,7 +1,5 @@
 package org.coderthoughts.asciipics.ejb.aliaser;
 
-import java.lang.reflect.Method;
-
 import javax.naming.InitialContext;
 
 import org.coderthoughts.asciipics.api.PictureService;
@@ -11,45 +9,22 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
 public class Activator implements BundleActivator {
+    private static final String JNDI_NAME = "java:global/ascii-pics-provider-ejb-1.0-SNAPSHOT/AsciiPicEJB";
+
     private ServiceRegistration reg;
 
     @Override
     public void start(BundleContext context) throws Exception {
-        // TODO this should happen in a deployment processor
-        // System.out.println("Aliaser started: " + context);
-        // System.out.println("*** Initial Context" + getInitialContext(context));
         InitialContext iniCtx = getInitialContext(context);
-        // final Object ejbObj = iniCtx
-        // .lookup("java:global/AsciiPicsEJB/AsciiPicEJB!org.coderthoughts.asciipics.ejb.PictureServiceRemote");
-        final Object ejbObj = iniCtx
-                .lookup("java:global/AsciiPicsEJB/AsciiPicEJB!org.coderthoughts.asciipics.ejb.PictureServiceLocal");
+        final Object ejbObj = iniCtx.lookup(JNDI_NAME);
 
-        // System.out.println("**** " + ejbObj);
-        // ClassLoader ctxLoader = Thread.currentThread().getContextClassLoader();
-        // System.out.println("~~~~ " + ejbObj.getClass().getDeclaredMethod("getPic", String.class).invoke(ejbObj, "xyz"));
-        ejbObj.getClass().getDeclaredMethod("getPic", String.class).invoke(ejbObj, "xyz");
-        
-        /* TODO should work with Beta4
-        if (ejbObj instanceof PictureService) {
-            PictureService ps = (PictureService) ejbObj;
-            System.out.println("Cast to PictureService: " + ps);
-        } */
+        if (ejbObj instanceof PictureService == false) {
+            throw new IllegalStateException("JNDI registration " + JNDI_NAME + " does not implement "
+                    + PictureService.class.getName() + " interface: " + ejbObj);
+        }
 
-        final Method ejbMethod = ejbObj.getClass().getDeclaredMethod("getPic", String.class);
-
-        PictureService service = new PictureService() {
-            @Override
-            public String getPic(String name) {
-                try {
-                    Object s = ejbMethod.invoke(ejbObj, name);
-                    return s != null ? s.toString() : "";
-                } catch (Exception e) {
-                    return e.getMessage();
-                }
-            }
-        };
-        reg = context.registerService(PictureService.class.getName(), service, null);
-        System.out.println("Registered Aliaser");
+        reg = context.registerService(PictureService.class.getName(), ejbObj, null);
+        System.out.println("Registered EJB object in OSGi Service registry");
     }
 
     private InitialContext getInitialContext(BundleContext context) {
