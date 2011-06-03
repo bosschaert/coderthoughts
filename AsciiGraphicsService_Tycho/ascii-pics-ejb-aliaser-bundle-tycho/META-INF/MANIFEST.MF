@@ -6,6 +6,5 @@ Import-Package: javax.naming,
  org.coderthoughts.asciipics.api,
  org.osgi.framework,
  org.osgi.util.tracker
-Service-Component: OSGI-INF/*.xml
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: org.coderthoughts.asciipics.ejb.aliaser.Activator

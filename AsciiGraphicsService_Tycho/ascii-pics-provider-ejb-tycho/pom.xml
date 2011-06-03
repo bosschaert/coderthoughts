@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>org.coderthoughts</groupId>
-            <artifactId>ascii-pics-api-bundlei-tycho</artifactId>
+            <artifactId>ascii-pics-api-bundle-tycho</artifactId>
             <version>1.0.0</version>
             <scope>provided</scope>
         </dependency>
