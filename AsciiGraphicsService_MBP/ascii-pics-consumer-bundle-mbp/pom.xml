@@ -27,8 +27,9 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Private-Package>org.coderthoughts.asciipics.client</Private-Package>
             <Export-Package/>  
+            <Private-Package>org.coderthoughts.asciipics.client</Private-Package>
+            <Service-Component>OSGI-INF/*.xml</Service-Component>
           </instructions>
         </configuration>
       </plugin>
