@@ -26,6 +26,9 @@
           <instructions>
             <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
             <Bundle-Activator>org.example.myosgibundle.Activator</Bundle-Activator>
+            <Import-Package>*</Import-Package>
+            <Export-Package/>
+            <Private-Package>org.example.myosgibundle</Private-Package>
           </instructions>
         </configuration>
       </plugin>
