@@ -11,6 +11,8 @@
 
     <modules>
         <module>api</module>
+        <module>domain</module>
+        <module>database</module>
         <module>frontend</module>
     </modules>
 </project>
