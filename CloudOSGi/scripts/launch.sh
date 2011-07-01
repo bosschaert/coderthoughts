@@ -19,7 +19,7 @@ cp $ZOOKEEPER_DIR/conf/zoo_sample.cfg $ZOOKEEPER_DIR/conf/zoo.cfg
 $XTERM_COMMAND "$ZOOKEEPER_DIR/bin/zkServer.sh start ; read dummy; $ZOOKEEPER_DIR/bin/zkServer.sh stop" &
 
 # Sleep to give the zookeeper server a chance to start up. Shouldn't really be needed though...
-sleep 2
+# sleep 2
 
 CONFIG_BASE=file://$BASEDIR/felix-config
 echo Config Base: $CONFIG_BASE
@@ -28,11 +28,14 @@ echo Config Base: $CONFIG_BASE
 mkdir $DATADIR/load
 echo "zookeeper.host = 127.0.0.1" > $DATADIR/load/org.apache.cxf.dosgi.discovery.zookeeper.cfg
 
-# Launch Felix Client
-$XTERM_COMMAND "java -Dfelix.config.properties=$CONFIG_BASE/config_client.properties -jar $FELIX_DIR/bin/felix.jar -b $FELIX_DIR/bundle $DATADIR/client" &
+# Launch Frontend
+$XTERM_COMMAND "java -Dfelix.config.properties=$CONFIG_BASE/config_frontend.properties -jar $FELIX_DIR/bin/felix.jar -b $FELIX_DIR/bundle $DATADIR/frontend" &
 
-# Launch Felix Server 1
-$XTERM_COMMAND "java -Dfelix.config.properties=$CONFIG_BASE/config_server1.properties -jar $FELIX_DIR/bin/felix.jar -b $FELIX_DIR/bundle $DATADIR/server1" &
+# Launch Database 1
+$XTERM_COMMAND "java -Dfelix.config.properties=$CONFIG_BASE/config_database.properties -jar $FELIX_DIR/bin/felix.jar -b $FELIX_DIR/bundle $DATADIR/database1" &
+
+# Launch Database 2
+$XTERM_COMMAND "java -Dfelix.config.properties=$CONFIG_BASE/config_database.properties -jar $FELIX_DIR/bin/felix.jar -b $FELIX_DIR/bundle $DATADIR/database2" &
 
 popd
 
