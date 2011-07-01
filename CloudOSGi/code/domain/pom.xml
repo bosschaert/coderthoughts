@@ -22,7 +22,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>org.coderthoughts.mycloudapp.api</Export-Package>
+                        <Export-Package>org.coderthoughts.mycloudapp.*</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

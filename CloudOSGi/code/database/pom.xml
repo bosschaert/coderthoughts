@@ -53,11 +53,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>org.coderthoughts.osgi.cloud.database.impl.Activator</Bundle-Activator>
-                        <Import-Package>
-                            org.coderthoughts.mycloudapp.api,
-                            org.coderthoughts.osgi.cloud.api,
-                            org.osgi.framework,
-                            org.osgi.util.tracker</Import-Package>
+                        <Import-Package>*</Import-Package>
                         <Export-Package />
                         <Private-Package>org.coderthoughts.osgi.cloud.database.impl</Private-Package>
                     </instructions>
