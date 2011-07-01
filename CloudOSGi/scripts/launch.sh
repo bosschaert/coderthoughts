@@ -18,6 +18,9 @@ echo Datadir: $DATADIR
 cp $ZOOKEEPER_DIR/conf/zoo_sample.cfg $ZOOKEEPER_DIR/conf/zoo.cfg
 $XTERM_COMMAND "$ZOOKEEPER_DIR/bin/zkServer.sh start ; read dummy; $ZOOKEEPER_DIR/bin/zkServer.sh stop" &
 
+# Sleep to give the zookeeper server a chance to start up. Shouldn't really be needed though...
+sleep 2
+
 CONFIG_BASE=file://$BASEDIR/felix-config
 echo Config Base: $CONFIG_BASE
 
