@@ -27,7 +27,7 @@ public class Activator implements BundleActivator {
 
         OSGiFrameworkTrackerCustomizer customizer = new OSGiFrameworkTrackerCustomizer(AppConstants.DATABASE, databases) {
             public Object addingService(ServiceReference reference) {
-                window.addText("Database appeared on: " + referenceIP(reference));
+                window.addText("Discovered database on: " + referenceIP(reference));
                 return super.addingService(reference);
             }
 
