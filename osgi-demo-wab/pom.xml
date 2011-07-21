@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--
+  <parent>
+    <groupId>org.coderthoughts</groupId>
+    <artifactId>osgi-webapp-demo-parent</artifactId>
+    <version>7.0.0</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  -->
+
+  <artifactId>osgi-demo-wab</artifactId>
+  <groupId>org.coderthoughts</groupId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.spec.javax.servlet</groupId>
+      <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+      <version>1.0.0.Final</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>4.2.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <archive>          
+            <manifestEntries>
+              <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+              <Bundle-SymbolicName>TestWab</Bundle-SymbolicName>
+              <Import-Package>org.osgi.framework,javax.servlet,javax.servlet.http</Import-Package>
+              <Export-Package>org.coderthoughts.demo.web.osgi</Export-Package>
+              <Bundle-ClassPath>.,WEB-INF/classes/</Bundle-ClassPath>
+              <Web-ContextPath>/TestWab</Web-ContextPath>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
