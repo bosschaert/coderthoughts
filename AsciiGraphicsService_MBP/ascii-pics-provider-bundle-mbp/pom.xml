@@ -35,7 +35,7 @@
           <instructions>
             <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
             <Bundle-Activator>org.coderthoughts.asciipics.Activator</Bundle-Activator>
-            <Export-Package>org.coderthoughts.asciipics.impl</Export-Package>
+            <Export-Package>org.coderthoughts.asciipics.impl;-split-package:=first</Export-Package>
           </instructions>
         </configuration>
       </plugin>
