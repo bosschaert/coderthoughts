@@ -8,24 +8,19 @@
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
 
+  <files>
+    <file>
+      <source>target/classes/OSGI-INF/SUBSYSTEM.MF</source>
+      <outputDirectory>OSGI-INF</outputDirectory>
+    </file>
+  </files>
+
   <dependencySets>
     <dependencySet>
       <scope>runtime</scope>
+      <excludes>
+        <exclude>org.coderthoughts.subsystem:basic-feature-subsystem-feature</exclude>
+      </excludes>
     </dependencySet>
   </dependencySets>
-
-<!-- 
-  <moduleSets>
-    <moduleSet>
-      <includes>
-        <include>org.coderthoughts.subsystem:basic-feature-subsystem-bundle1</include>
-        <include>org.coderthoughts.subsystem:basic-feature-subsystem-bundle2</include>
-      </includes>
-      <binaries>
-        <outputDirectory>foo/${artifactId}</outputDirectory>
-        <unpack>false</unpack>
-      </binaries>
-    </moduleSet>
-  </moduleSets>
-   -->
 </assembly> 
