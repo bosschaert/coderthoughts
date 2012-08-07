@@ -23,6 +23,8 @@ public class MSCServiceActivator implements ServiceActivator {
           System.out.println("@@@ CTX:" + ctx);
           System.out.println("###" + ctx.getEnvironment());
 
+          System.out.println("***" + ctx.lookup("osgi:service/org.osgi.service.startlevel.StartLevel"));
+          
           NamingEnumeration<NameClassPair> res = ctx.list("");
           while(res.hasMore()) {
             System.out.println("@@@" + res.next());
