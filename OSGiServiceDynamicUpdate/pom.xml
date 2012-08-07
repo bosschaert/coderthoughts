@@ -51,7 +51,8 @@
   <modules>
     <module>api</module>
     <module>consumer</module>
-    <module>service-local</module>
+    <module>service-local-bug</module>
+    <module>service-local-fixed</module>
       <!--
     <module>service-remote</module>
 -->
