@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+  <reference id="myService"
+             interface="org.coderthoughts.osgi.services.api.MyService" />
+
+  <bean id="service-consumer" 
+        class="org.coderthoughts.osgi.service.consumer.ConsumerComponent"
+        init-method="activate" destroy-method="deactivate">
+    <property name="myService" ref="myService" />
+  </bean>
+</blueprint>
