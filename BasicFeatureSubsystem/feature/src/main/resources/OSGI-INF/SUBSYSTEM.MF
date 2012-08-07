@@ -1,0 +1,8 @@
+Manifest-Version: 2.0
+Subsystem-ManifestVersion: 1.0
+Subsystem-SymbolicName: ${project.artifactId}
+Subsystem-Version: ${project.version}
+Subsystem-Name: ${project.name}
+Subsystem-Content: basic-feature-subsystem-bundle1,
+ basic-feature-subsystem-bundle2
+Subsystem-Type: osgi.subsystem.feature
