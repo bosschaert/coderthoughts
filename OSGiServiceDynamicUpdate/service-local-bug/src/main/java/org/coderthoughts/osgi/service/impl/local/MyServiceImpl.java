@@ -18,6 +18,6 @@ import org.coderthoughts.osgi.services.api.MyService;
 public class MyServiceImpl implements MyService {
     @Override
     public String performOperation(String argument) {
-        return "Processed " + argument + " locally qxzf";
+        return "Processed " + argument + " qxzf";
     }
 }

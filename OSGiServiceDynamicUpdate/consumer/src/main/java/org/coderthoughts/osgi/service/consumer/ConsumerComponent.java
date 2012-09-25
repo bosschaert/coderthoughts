@@ -28,16 +28,13 @@ public class ConsumerComponent {
 
         keepRunning = true;
         new Thread(new ServiceCaller()).start();
-        System.out.println("*** Activated component");
     }
 
     public void setMyService(MyService svc) {
-        System.out.println("*** Setting service: " + svc);
         service = svc;
     }
 
     public void deactivate() {
-        System.out.println("*** Deactivating component");
         keepRunning = false;
 
         consumerWindow.setVisible(false);

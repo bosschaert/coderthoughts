@@ -23,7 +23,6 @@ public class Activator implements BundleActivator {
 
     @Override
     public void start(BundleContext context) throws Exception {
-        System.out.println("*** Registering Service");
         reg = context.registerService(MyService.class.getName(), new MyServiceImpl(), null);
     }
 
