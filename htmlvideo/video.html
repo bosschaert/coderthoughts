@@ -1,38 +1,29 @@
 <html>
-<head>
-  <title>HTML5 Video Conferencing</title>
-  <script>
-    function initiate() {
-        navigator.webkitGetUserMedia({video: true}, success, showerror);
-        console.log("obtained media");
-    }
-    function success(stream) {
-      console.log("successs:");
-      var url = URL.createObjectURL(stream);
-      var video = document.getElementById("media");
-       
-      video.setAttribute("src", url);
-      video.play();
-      
-      var div = document.getElementById("urltxt");
-      div.innerHTML = url;
-    }
-    function showerror(e) {
-      console.log("An error has occurred:");
-      console.log(e);
-    }
-    addEventListener('load', initiate);
-    console.log('started');
-  </script>
-</head>
-<body>
-  <header><h1>HTML Video Conferencing</h1></header>
-  <section>
-  URL: <div id="urltxt"/>
-  </section>
-  <section id="video">
+  <head>
+    <title>HTML5 Video with no plugins!</title>
+    <script>
+      function setup() {
+        navigator.myGetMedia = ( navigator.getUserMedia || 
+          navigator.webkitGetUserMedia ||
+          navigator.msGetUserMedia);
+
+        navigator.myGetMedia({video: true}, connect, error); 
+      }
+
+      function connect(stream) {
+        var video = document.getElementById("media");
+        var vendorURL = window.URL || window.webkitURL;
+        video.src = vendorURL ? vendorURL.createObjectURL(stream) : stream;
+        video.play();
+      }
+
+      function error(e) { console.log(e); }
+
+      addEventListener("load", setup);
+    </script>
+  </head>
+  <body>
+    <header><h1>HTML5 Video with no plugins!</h1></header>
     <video id="media"/>
-  </section>
-  <footer><h3>Look ma, no plugins</h3></footer>
-</body>
+  </body>
 </html>
