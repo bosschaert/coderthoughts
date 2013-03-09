@@ -12,8 +12,7 @@
 
       function connect(stream) {
         var video = document.getElementById("media");
-        var vendorURL = window.URL || window.webkitURL;
-        video.src = vendorURL ? vendorURL.createObjectURL(stream) : stream;
+        video.src = window.URL ? window.URL.createObjectURL(stream) : stream;
         video.play();
       }
 
