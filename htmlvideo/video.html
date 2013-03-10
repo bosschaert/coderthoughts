@@ -5,6 +5,7 @@
       function setup() {
         navigator.myGetMedia = ( navigator.getUserMedia || 
           navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia ||
           navigator.msGetUserMedia);
 
         navigator.myGetMedia({video: true}, connect, error); 
