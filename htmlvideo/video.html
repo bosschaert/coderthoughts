@@ -12,7 +12,7 @@
       }
 
       function connect(stream) {
-        var video = document.getElementById("media");
+        var video = document.getElementById("my_video");
         video.src = window.URL ? window.URL.createObjectURL(stream) : stream;
         video.play();
       }
@@ -24,6 +24,6 @@
   </head>
   <body>
     <header><h1>HTML5 Video with no plugins!</h1></header>
-    <video id="media"/>
+    <video id="my_video"/>
   </body>
 </html>
