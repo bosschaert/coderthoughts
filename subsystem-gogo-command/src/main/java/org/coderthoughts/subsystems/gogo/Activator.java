@@ -17,18 +17,18 @@ public class Activator implements BundleActivator {
     public void start(BundleContext context) throws Exception {
         bundleContext = context;
 
-		Dictionary<String, Object> props = new Hashtable<String, Object>();
-		props.put("osgi.command.function", new String [] {"install", "uninstall", "start", "stop", "list"});
-		props.put("osgi.command.scope", "subsystem");
-		context.registerService(getClass().getName(), this, props);
-	}
+        Dictionary<String, Object> props = new Hashtable<String, Object>();
+        props.put("osgi.command.function", new String[] { "install", "uninstall", "start", "stop", "list" });
+        props.put("osgi.command.scope", "subsystem");
+        context.registerService(getClass().getName(), this, props);
+    }
 
-	public void install(String url) throws IOException {
-	    Subsystem rootSubsystem = getSubsystem(0);
-		System.out.println("Installing subsystem: " + url);
-		Subsystem s = rootSubsystem.install(url, new URL(url).openStream());
-		System.out.println("Subsystem successfully installed: " + s.getSymbolicName() + "; id: " + s.getSubsystemId());
-	}
+    public void install(String url) throws IOException {
+        Subsystem rootSubsystem = getSubsystem(0);
+        System.out.println("Installing subsystem: " + url);
+        Subsystem s = rootSubsystem.install(url, new URL(url).openStream());
+        System.out.println("Subsystem successfully installed: " + s.getSymbolicName() + "; id: " + s.getSubsystemId());
+    }
 
     public void uninstall(long id) {
         getSubsystem(id).uninstall();
@@ -53,7 +53,8 @@ public class Activator implements BundleActivator {
 
     private Subsystem getSubsystem(long id) {
         try {
-            for (ServiceReference<Subsystem> ref : bundleContext.getServiceReferences(Subsystem.class, "(subsystem.id=" + id + ")")) {
+            for (ServiceReference<Subsystem> ref :
+                    bundleContext.getServiceReferences(Subsystem.class, "(subsystem.id=" + id + ")")) {
                 Subsystem svc = bundleContext.getService(ref);
                 if (svc != null)
                     return svc;
@@ -64,5 +65,6 @@ public class Activator implements BundleActivator {
         throw new RuntimeException("Unable to find subsystem " + id);
     }
 
-    public void stop(BundleContext context) throws Exception {}
+    public void stop(BundleContext context) throws Exception {
+    }
 }
