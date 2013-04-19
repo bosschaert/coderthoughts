@@ -27,7 +27,7 @@ public class Activator implements BundleActivator {
 	    Subsystem rootSubsystem = getSubsystem(0);
 		System.out.println("Installing subsystem: " + url);
 		Subsystem s = rootSubsystem.install(url, new URL(url).openStream());
-		System.out.println("Subsystem succesfully installed: " + s.getSymbolicName() + "; id: " + s.getSubsystemId());
+		System.out.println("Subsystem successfully installed: " + s.getSymbolicName() + "; id: " + s.getSubsystemId());
 	}
 
     public void uninstall(long id) {
