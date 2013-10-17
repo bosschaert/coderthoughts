@@ -1,0 +1,30 @@
+<project name="simpleJasmineAntTest" basedir="." default="spectest">
+    <path id="script.classpath">
+        <fileset dir="lib/rhino-1.7r3" includes="*.jar" />
+    </path>
+    <property name="script.language" value="rhino-nonjdk" />
+
+    <property name="jasmine.dir" location="lib/jasmine-ant" />
+    <scriptdef name="jasmine" src="${jasmine.dir}/jasmineAnt.js" 
+               language="${script.language}" classpathref="script.classpath">
+        <!-- Jasmine (jasmine-rhino.js) needs pure Rhino because JDK-Rino does not define JavaAdapter. -->
+        <attribute name="options" />
+        <attribute name="ignoredGlobalVars" />
+        <attribute name="haltOnFirstFailure" />
+        <attribute name="jasmineSpecRunnerPath" />
+        <element name="fileset" type="fileset" />
+    </scriptdef>
+    <property name="jasmine.test-dir" location="test-reports" />
+
+    <target name="spectest" description="run all specs named '*Spec.js' under Jasmine" depends="clean">
+        <mkdir taskname="jasmine" dir="${jasmine.test-dir}" />
+        <jasmine options="{verbose:true}" haltOnFirstFailure="false"
+                 jasmineSpecRunnerPath="${jasmine.dir}/AntSpecRunner.js">
+            <fileset dir="test" includes="**/*Spec.js" />
+        </jasmine>
+    </target>
+
+    <target name="clean" description="clean">
+        <delete dir="${jasmine.test-dir}" />
+    </target>
+</project>
