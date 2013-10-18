@@ -11,14 +11,15 @@
         <attribute name="ignoredGlobalVars" />
         <attribute name="haltOnFirstFailure" />
         <attribute name="jasmineSpecRunnerPath" />
+        <attribute name="testOutputDir" />
         <element name="fileset" type="fileset" />
     </scriptdef>
     <property name="jasmine.test-dir" location="test-reports" />
 
     <target name="spectest" description="run all specs named '*Spec.js' under Jasmine" depends="clean">
-        <mkdir taskname="jasmine" dir="${jasmine.test-dir}" />
         <jasmine options="{verbose:true}" haltOnFirstFailure="false"
-                 jasmineSpecRunnerPath="${jasmine.dir}/AntSpecRunner.js">
+            jasmineSpecRunnerPath="${jasmine.dir}/AntSpecRunner.js"
+            testOutputDir="${jasmine.test-dir}">
             <fileset dir="test" includes="**/*Spec.js" />
         </jasmine>
     </target>

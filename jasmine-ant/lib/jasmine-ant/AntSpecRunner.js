@@ -33,7 +33,7 @@ Load.file('lib/jasmine-reporters-0.2.1/env.rhino-ant-console.js');
 
 // load JUnit XML reporter
 Load.file('lib/jasmine-reporters-0.2.1/jasmine.junit_reporter.js');
-jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter('test-reports/'));
+jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(testOutputDir));
 
 // add global api reporter
 var apiReporter = new jasmine.JsApiReporter();

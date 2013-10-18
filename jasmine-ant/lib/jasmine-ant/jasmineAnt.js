@@ -41,6 +41,12 @@ Load.file = function(fileName) {
     evalGlobal(code);
 };
 
+
+var testOutputDir = "test-reports/";
+if (attributes.get("testoutputdir")) {
+    testOutputDir = attributes.get("testoutputdir");
+}
+
 var jasmineSpecRunnerPath = "src/AntSpecRunner.js";
 if (attributes.get("jasminespecrunnerpath")) {
     jasmineSpecRunnerPath = attributes.get("jasminespecrunnerpath");
