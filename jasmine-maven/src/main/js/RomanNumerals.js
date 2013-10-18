@@ -1,3 +1,6 @@
+// Taken from http://hg.code-cop.org/js-katas/src/tip/src/pair/romannumerals/a20130423/RomanNumerals.js
+// Thank you, Code Cop
+
 RomanNumerals = function() {
     this.decimalByLiteral = {
         'M' : 1000,

@@ -9,6 +9,7 @@
 
   <dependencies>
     <dependency>
+      <!-- Bring in the original Rhino implementation that contains the JavaAdapter class -->
       <groupId>org.mozilla</groupId>
       <artifactId>rhino</artifactId>
       <version>1.7R3</version>
@@ -16,19 +17,13 @@
     </dependency>
 
     <dependency>
+      <!-- Adds the 'rhino-nonjdk' language to the supported scripting languages -->
+      <!-- Obtained fom the repository at http://dist.codehaus.org/mule/dependencies/maven2/ -->
       <groupId>javax.script</groupId>
       <artifactId>js-engine</artifactId>
       <version>1.0</version>
       <scope>test</scope>
     </dependency>
-<!-- 
-    <dependency>    
-      <groupId>com.sun.phobos</groupId>
-      <artifactId>phobos-js</artifactId>
-      <version>0.6.2</version>
-      <scope>test</scope>
-    </dependency>
-    -->
   </dependencies>
 
   <build>
@@ -44,20 +39,20 @@
               <target>
                 <property name="jasmine.dir" location="lib/jasmine-ant" />
                 <property name="script.classpath" refid="maven.test.classpath" />
-                <echo message="Maven test classpath: ${script.classpath}" />
-                <echo message="AAAAAAAAAAAAAAAAAAAAAA" />
+
                 <scriptdef name="jasmine" src="${jasmine.dir}/jasmineAnt.js"
                   language="rhino-nonjdk" classpath="${script.classpath}">
                   <!-- Jasmine (jasmine-rhino.js) needs pure Rhino because 
-                    JDK-Rino does not define JavaAdapter. -->
+                    JDK-Rhino does not define JavaAdapter. -->
                   <attribute name="options" />
                   <attribute name="ignoredGlobalVars" />
                   <attribute name="haltOnFirstFailure" />
                   <attribute name="jasmineSpecRunnerPath" />
+                  <attribute name="testOutputDir" />
                   <element name="fileset" type="fileset" />
                 </scriptdef>
 
-                <jasmine options="{verbose:true}"
+                <jasmine options="{verbose:true}" testOutputDir="target/surefire-reports"
                   haltOnFirstFailure="false" jasmineSpecRunnerPath="${jasmine.dir}/AntSpecRunner.js">
                   <fileset dir="test" includes="**/*Spec.js" />
                 </jasmine>

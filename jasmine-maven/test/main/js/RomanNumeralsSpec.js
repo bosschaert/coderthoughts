@@ -1,11 +1,12 @@
-// Load.file('lib/jasmine-1.3.1/SpecRunner.js');
+// Taken from http://hg.code-cop.org/js-katas/src/tip/src/pair/romannumerals/a20130423/RomanNumeralsSpec.js
+// Thank you, Code Cop
 
 // idea for algorithm:
 // * itertate from left to right and count M,D,C,L,X,V,I
 // * special cases IV, IX, XL, XC, CM, MD
 // * error handling for wrong numbers
 
-Load.file('src/romannumerals/RomanNumerals.js');
+Load.file('src/main/js/RomanNumerals.js');
 
 describe('RomanNumerals', function() {
 
