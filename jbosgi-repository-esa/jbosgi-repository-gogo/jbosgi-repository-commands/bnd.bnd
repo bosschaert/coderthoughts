@@ -1,0 +1,13 @@
+-buildpath: osgi.core;version=5.0,\
+	jbosgi-repository;version=2.0
+Private-Package: org.coderthoughts.jbosgi.repo.gogo.command
+-runfw: org.eclipse.osgi;version='[3.9.0.v20130529-1710,3.9.0.v20130529-1710]'
+-runee: JavaSE-1.6
+-runbundles: org.apache.felix.gogo.command,\
+	org.apache.felix.gogo.runtime,\
+	org.apache.felix.gogo.shell,\
+	jbosgi-repository;version=2.0.1,\
+	org.jboss.logging.jboss-logging;version=3.1.2
+-runvm: -Dosgi.console
+Bundle-Activator: org.coderthoughts.jbosgi.repo.gogo.command.Activator
+Bundle-Version: 0.0.1

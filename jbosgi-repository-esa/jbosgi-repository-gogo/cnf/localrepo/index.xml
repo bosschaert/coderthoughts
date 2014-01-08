@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<repository increment='1389172394707' name='Local' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+  <resource>
+    <capability namespace='osgi.identity'>
+      <attribute name='osgi.identity' value='org.jboss.logging.jboss-logging'/>
+      <attribute name='type' value='osgi.bundle'/>
+      <attribute name='version' type='Version' value='3.1.2.GA'/>
+    </capability>
+    <capability namespace='osgi.content'>
+      <attribute name='osgi.content' value='46ce0368aa7a28df30b039abace696f00f182b266d566b17c887e0093d6e09db'/>
+      <attribute name='url' value='org.jboss.logging.jboss-logging/org.jboss.logging.jboss-logging-3.1.2.jar'/>
+      <attribute name='size' type='Long' value='55248'/>
+      <attribute name='mime' value='application/vnd.osgi.bundle'/>
+    </capability>
+    <capability namespace='osgi.wiring.bundle'>
+      <attribute name='osgi.wiring.bundle' value='org.jboss.logging.jboss-logging'/>
+      <attribute name='bundle-version' type='Version' value='3.1.2.GA'/>
+    </capability>
+    <capability namespace='osgi.wiring.host'>
+      <attribute name='osgi.wiring.host' value='org.jboss.logging.jboss-logging'/>
+      <attribute name='bundle-version' type='Version' value='3.1.2.GA'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.jboss.logging'/>
+      <attribute name='version' type='Version' value='3.1.2.GA'/>
+      <attribute name='bundle-symbolic-name' value='org.jboss.logging.jboss-logging'/>
+      <attribute name='bundle-version' type='Version' value='3.1.2.GA'/>
+      <directive name='uses' value='org.jboss.logmanager,org.apache.log4j,org.slf4j.spi,org.slf4j'/>
+    </capability>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(osgi.wiring.package=org.apache.log4j)'/>
+      <directive name='resolution' value='optional'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.jboss.logging)(version&gt;=3.1.0))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(osgi.wiring.package=org.jboss.logmanager)'/>
+      <directive name='resolution' value='optional'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.6.0))'/>
+      <directive name='resolution' value='optional'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.6.0))'/>
+      <directive name='resolution' value='optional'/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace='osgi.identity'>
+      <attribute name='osgi.identity' value='jbosgi-repository'/>
+      <attribute name='type' value='osgi.bundle'/>
+      <attribute name='version' type='Version' value='2.0.1'/>
+    </capability>
+    <capability namespace='osgi.content'>
+      <attribute name='osgi.content' value='87e86645e476faa58a40980abfbd8bda6437709feaced33ea0a5d9347853983a'/>
+      <attribute name='url' value='jbosgi-repository/jbosgi-repository-2.0.1.jar'/>
+      <attribute name='size' type='Long' value='194533'/>
+      <attribute name='mime' value='application/vnd.osgi.bundle'/>
+    </capability>
+    <capability namespace='osgi.wiring.bundle'>
+      <attribute name='osgi.wiring.bundle' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+    </capability>
+    <capability namespace='osgi.wiring.host'>
+      <attribute name='osgi.wiring.host' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.jboss.osgi.metadata'/>
+      <attribute name='version' type='Version' value='2.1.1.CR7'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.framework'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.jboss.osgi.repository'/>
+      <attribute name='version' type='Version' value='2.0.1'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.framework,org.jboss.logging,org.jboss.osgi.resolver,javax.xml.stream,org.osgi.resource,org.osgi.service.repository,org.jboss.osgi.resolver.spi,org.jboss.osgi.metadata,org.jboss.osgi.repository.spi,org.osgi.util.tracker,org.jboss.modules'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.jboss.osgi.repository.spi'/>
+      <attribute name='version' type='Version' value='2.0.1'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.resource,org.jboss.osgi.repository,org.jboss.osgi.resolver,org.jboss.osgi.resolver.spi,org.osgi.framework'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.jboss.osgi.resolver'/>
+      <attribute name='version' type='Version' value='3.0.0.CR8'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.framework,org.osgi.framework.wiring,org.jboss.modules,org.jboss.osgi.resolver.spi,org.osgi.resource,org.jboss.osgi.metadata,org.osgi.service.resolver'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.jboss.osgi.resolver.spi'/>
+      <attribute name='version' type='Version' value='3.0.0.CR8'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.resource,org.osgi.framework.wiring,org.jboss.osgi.resolver,org.osgi.framework,org.jboss.modules,org.osgi.service.resolver,org.jboss.osgi.metadata'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.osgi.framework.wiring'/>
+      <attribute name='version' type='Version' value='1.1.0'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.resource,org.osgi.framework'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.osgi.resource'/>
+      <attribute name='version' type='Version' value='1.0.0'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.osgi.service.repository'/>
+      <attribute name='version' type='Version' value='1.0.0'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.resource'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.osgi.service.resolver'/>
+      <attribute name='version' type='Version' value='1.0.0'/>
+      <attribute name='bundle-symbolic-name' value='jbosgi-repository'/>
+      <attribute name='bundle-version' type='Version' value='2.0.1'/>
+      <directive name='uses' value='org.osgi.resource'/>
+    </capability>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(osgi.wiring.package=javax.xml.namespace)'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(osgi.wiring.package=javax.xml.stream)'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.jboss.logging)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(osgi.wiring.package=org.jboss.modules)'/>
+      <directive name='resolution' value='optional'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.jboss.osgi.metadata)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.jboss.osgi.resolver)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.jboss.osgi.resolver.spi)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.framework.wiring)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.resource)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.service.repository)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.service.resolver)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+  </resource>
+</repository>
