@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jbosgi-repository.esa" default="build" basedir=".">
+    <target name="build">
+        <zip destfile="${basedir}/generated/jbosgi-repository.esa">
+            <fileset dir="${basedir}/src">
+                <include name="**/*.MF"/>
+            </fileset>
+            <fileset file="${basedir}/../jbosgi-repository-gogo/jbosgi-repository-commands/generated/jbosgi-repository-commands.jar"/>
+            <fileset file="${basedir}/../jbosgi-repository-gogo/cnf/localrepo/org.jboss.logging.jboss-logging/org.jboss.logging.jboss-logging-3.1.2.jar"/>
+            <fileset file="${basedir}/../jbosgi-repository-gogo/cnf/localrepo/jbosgi-repository/jbosgi-repository-2.0.1.jar"/>
+        </zip>
+    </target>
+
+    <target name="clean">
+        <delete dir="${basedir}/generated"/>
+    </target>
+</project>
+

@@ -1,0 +1,4 @@
+Subsystem-SymbolicName: jbosgi-repository
+Subsystem-Version: 2.0.1
+Subsystem-Type: osgi.subsystem.feature
+
