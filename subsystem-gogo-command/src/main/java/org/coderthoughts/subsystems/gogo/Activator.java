@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -55,11 +57,18 @@ public class Activator implements BundleActivator {
     }
 
     public void list() throws InvalidSyntaxException {
+        Map<Long, String> subsystems = new TreeMap<Long, String>();
+
         for (ServiceReference<Subsystem> ref : bundleContext.getServiceReferences(Subsystem.class, null)) {
             Subsystem s = bundleContext.getService(ref);
             if (s != null) {
-                System.out.printf("%d\t%s\t%s\n", s.getSubsystemId(), s.getState(), s.getSymbolicName());
+                subsystems.put(s.getSubsystemId(),
+                    String.format("%d\t%s\t%s %s", s.getSubsystemId(), s.getState(), s.getSymbolicName(), s.getVersion()));
             }
+        }
+
+        for (String entry : subsystems.values()) {
+            System.out.println(entry);
         }
     }
 
