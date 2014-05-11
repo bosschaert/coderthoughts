@@ -8,15 +8,10 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     
-    <!--
-    <properties>
-        <bnd.version>2.3.0-SNAPSHOT</bnd.version>
-    </properties>
-    -->
-    
     <modules>
         <module>TestBundle</module>
         <module>TestBundle2</module>
+        <module>TestBundle3</module>
         <module>MBPBundle</module>
     </modules>
 </project>
