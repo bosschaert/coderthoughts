@@ -17,6 +17,7 @@
     <modules>
         <module>TestBundle</module>
         <module>TestBundle2</module>
+        <module>MBPBundle</module>
     </modules>
 </project>
 
