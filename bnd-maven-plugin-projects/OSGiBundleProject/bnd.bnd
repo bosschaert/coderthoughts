@@ -1,0 +1,13 @@
+Bundle-Version: 1.0.0.SNAPSHOT
+bin: target/classes
+src: src/main/java
+target-dir: target
+testbin: target/test-classes
+testsrc: src/main/test
+-outputmask = ${@bsn}-${version;===S;${@version}}.jar
+-buildpath:  \
+	osgi.core
+Bundle-Activator: org.foo.bar.MyBundleActivator
+Private-Package:  \
+	org.foo.bar
+-runfw: org.apache.felix.framework;version='[4.4.0,4.4.0]'
