@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+  <bean id="injected-component"
+        class="org.coderthought.blueprint.test.InjectedComponent"
+        init-method="activate">
+  </bean>
+
+  <bean id="blueprint-component" 
+        class="org.coderthought.blueprint.test.BlueprintComponent"
+        init-method="activate">
+    <property name="injected" ref="injected-component" />
+  </bean>  
+</blueprint>
