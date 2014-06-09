@@ -45,7 +45,7 @@
           <instructions>
             <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
             <Export-Package/>
-            <Import-Package>*</Import-Package>
+            <Import-Package/>
           </instructions>
         </configuration>        
       </plugin>
