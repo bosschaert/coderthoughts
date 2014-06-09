@@ -16,7 +16,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.coderthoughts.blueprint</groupId>
-  <artifactId>basic</artifactId>
+  <artifactId>blueprint-basic</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>  
 
