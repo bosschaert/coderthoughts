@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project name="Example JUnit test for testing JavaScript using HtmlUnit" default="build">
+    <path id="htmlunit.classpath">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="htmlunit.test.classpath">
+        <path refid="htmlunit.classpath"/>
+        <pathelement location="bin"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="bin"/>
+        <delete dir="test-output"/>
+    </target>
+
+    <target name="build">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin" includeAntRuntime="no">
+            <classpath refid="htmlunit.classpath"/>
+        </javac>
+    </target>
+
+    <target name="test" depends="build">
+        <mkdir dir="test-output"/>
+
+        <junit printsummary="yes">
+            <classpath refid="htmlunit.test.classpath"/>
+
+            <formatter type="plain"/>
+            <formatter type="xml"/>
+            
+            <batchtest fork="yes" todir="test-output">
+                <fileset dir="src"/>
+            </batchtest>
+        </junit>
+    </target>
+</project>
+
