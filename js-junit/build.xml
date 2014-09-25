@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Example JUnit test for testing JavaScript using HtmlUnit" default="build">
+<project name="Example JUnit test for testing JavaScript using HtmlUnit" default="test">
     <path id="htmlunit.classpath">
         <fileset dir="lib">
             <include name="*.jar"/>
