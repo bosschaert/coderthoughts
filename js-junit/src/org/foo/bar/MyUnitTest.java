@@ -38,10 +38,6 @@ public class MyUnitTest {
     }
 
     public String testJavaScript(String script) throws Exception {
-        return testJavaScript(script, false);
-    }
-
-    public String testJavaScript(String script, boolean async) throws Exception {
         StringBuilder html = new StringBuilder();
         html.append("<!DOCTYPE html><html>"
                 + "<body onload='myFunction()'>"
@@ -60,9 +56,10 @@ public class MyUnitTest {
 
         File f = File.createTempFile("jstest-", ".tmp");
 
-        try (OutputStream fos = new FileOutputStream(f)) {
-            fos.write(html.toString().getBytes());
-            fos.close();
+        try {
+            try (OutputStream fos = new FileOutputStream(f)) {
+                fos.write(html.toString().getBytes());
+            }
 
             WebClient wc = new WebClient();
             HtmlPage page = wc.getPage(f.toURI().toURL());
@@ -70,6 +67,7 @@ public class MyUnitTest {
             String result = page.getHtmlElementById("test_result").asText();
             int count = 30;
             while (count-- > 0 && "undefined".equals(result)) {
+                // Maybe the result arrives asynchronously
                 Thread.sleep(500);
                 result = page.getHtmlElementById("test_result").asText();
             }
