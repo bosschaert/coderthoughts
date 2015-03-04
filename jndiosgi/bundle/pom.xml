@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.coderthoughts</groupId>
+  <artifactId>jndi-osgi-bundle</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>4.2.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.enterprise</artifactId>
+      <version>4.2.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.5.3</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
+            <Bundle-Activator>org.coderthoughts.jndiosgi.impl.Activator</Bundle-Activator>
+            <Import-Package>*</Import-Package>
+            <Export-Package></Export-Package>
+            <Private-Package>org.coderthoughts.jndiosgi.impl</Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
