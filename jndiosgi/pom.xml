@@ -8,7 +8,10 @@
 
   <modules>
     <module>bundle</module>
+    <!--
     <module>wab</module>
+-->
+    <module>war</module>
     <module>esa</module>
   </modules>
 </project>
