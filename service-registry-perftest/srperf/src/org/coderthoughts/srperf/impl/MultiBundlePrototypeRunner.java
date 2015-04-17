@@ -49,7 +49,7 @@ class MultiBundlePrototypeRunner extends Thread implements Runner {
 
     @Override
     public double getResult() {
-        return counter / 1000000.0;
+        return counter / 10000.0;
     }
 
     @Override
