@@ -22,6 +22,31 @@
       <version>4.2.0</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+    <groupId>org.apache.servicemix.specs</groupId>
+    <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
+    <version>2.5.0</version>
+</dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.javax.activation</artifactId>
+      <version>0.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- 
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.5.0-b01</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.day.commons.osgi.wrapper</groupId>
+      <artifactId>com.day.commons.osgi.wrapper.commons-email</artifactId>
+      <version>1.2.0-0002</version>
+      <scope>provided</scope>
+    </dependency>
+    -->
   </dependencies>
   
   <build>
@@ -36,6 +61,7 @@
             <Bundle-SymbolicName>${project.name}</Bundle-SymbolicName>
             <Bundle-Activator>org.coderthoughts.email.bundle.Activator</Bundle-Activator>
             <Import-Package>org.osgi.service.http;resolution:=optional,
+                javax.activation,
                 *</Import-Package>
             <Export-Package></Export-Package>
             <Private-Package>org.coderthoughts.email.bundle</Private-Package>

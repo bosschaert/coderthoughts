@@ -12,6 +12,9 @@ import org.osgi.framework.ServiceObjects;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
+// Registers a prototype service factory that returns a constant from the getService() method.
+// Then access it in multiple threads from a multiple bundles via ServiceObjects and count
+// the number of times until stopped. The number of bundles used is the same as the number of threads.
 class MultiBundlePrototypeRunner extends Thread implements Runner {
     private final BundleContext ctx;
     private final ServiceReference<String> ref;
@@ -33,6 +36,7 @@ class MultiBundlePrototypeRunner extends Thread implements Runner {
                     System.out.println("Bad Service!");
                 else
                     counter++;
+                serviceObjects.ungetService(svc);
             } finally {
                 ctx.ungetService(ref);
             }

@@ -10,6 +10,9 @@ import org.osgi.framework.BundleException;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
+// Registers a singleton service. Then access it in multiple threads from a multiple bundles and count
+// the number of times until stopped. The number of bundles used is the same as the number of threads.
+// It also verifies that it obtains the expected service.
 public class MultiBundleSingletonRunner extends Thread implements Runner {
     private final BundleContext ctx;
     private final ServiceReference<String> ref;

@@ -8,6 +8,8 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
+// Registers a singleton service. Then accesses it in multiple threads from a single bundle and counts
+// the number of times until stopped. It also verifies that it obtains the expected service.
 class SingleBundleSingletonRunner extends Thread implements Runner {
     private final BundleContext ctx;
     private final ServiceReference<String> ref;
@@ -25,7 +27,7 @@ class SingleBundleSingletonRunner extends Thread implements Runner {
             try {
                 String svc = ctx.getService(ref);
                 if (!"foo".equals(svc))
-                    System.out.println("Bad Service!");
+                    System.out.println("Bad Service! " + svc);
                 else
                     counter++;
             } finally {

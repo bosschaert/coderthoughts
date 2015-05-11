@@ -11,6 +11,9 @@ import org.osgi.framework.ServiceObjects;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
+// Registers a prototype service factory that sleeps 10ms in the getService() method.
+// Then access it in multiple threads from a single bundle via ServiceObjects and count
+// the number of times until stopped.
 class SingleBundlePrototypeRunner extends Thread implements Runner {
     private final BundleContext ctx;
     private final ServiceReference<String> ref;
@@ -32,6 +35,7 @@ class SingleBundlePrototypeRunner extends Thread implements Runner {
                     System.out.println("Bad Service!");
                 else
                     counter++;
+//                serviceObjects.ungetService(svc); // TODO HUH????? java.lang.IllegalArgumentException: The service parameter was not provided by this object
             } finally {
                 ctx.ungetService(ref);
             }
