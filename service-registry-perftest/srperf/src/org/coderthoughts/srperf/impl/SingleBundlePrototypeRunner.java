@@ -35,7 +35,7 @@ class SingleBundlePrototypeRunner extends Thread implements Runner {
                     System.out.println("Bad Service!");
                 else
                     counter++;
-//                serviceObjects.ungetService(svc); // TODO HUH????? java.lang.IllegalArgumentException: The service parameter was not provided by this object
+//                serviceObjects.ungetService(svc);
             } finally {
                 ctx.ungetService(ref);
             }
