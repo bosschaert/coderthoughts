@@ -1,9 +1,11 @@
 package org.coderthoughts.servlet.recording;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,11 +28,11 @@ public class RecordingServlet extends HttpServlet {
         String res;
 
         switch (pathInfo) {
-        case "record":
-            res = recordInvocation(req);
+        case "":
+            res = listRecordings();
             break;
         default:
-            res = listRecordings();
+            res = recordInvocation(req);
             break;
         }
 
@@ -40,12 +42,24 @@ public class RecordingServlet extends HttpServlet {
         resp.getWriter().write(res);
     }
 
-    private synchronized String recordInvocation(HttpServletRequest req) {
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+
+    private synchronized String recordInvocation(HttpServletRequest req) throws IOException {
         String qs = req.getQueryString();
         if (qs == null)
             qs = "";
 
-        String s = "" + new Date() + " " + req.getPathInfo() + "?" + qs;
+        InputStream is = req.getInputStream();
+        Scanner scanner = new Scanner(is);
+        scanner.useDelimiter("\\A");
+
+        String s = "" + new Date() + " " + req.getPathInfo() + "?" + qs + "#" + (scanner.hasNext() ? scanner.next() : "");
+        scanner.close();
+        is.close();
+
         invocations.add(s);
         return "Invocation recorded: " + s;
     }
